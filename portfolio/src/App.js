@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import AboutMe from './components/AboutMe';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import Resume from './components/Resume';
+import Footer from './components/Footer';
 
 function App() {
+  const [currentSection, setCurrentSection] = useState('About Me');
+
+  const handleNavigationClick = (section) => {
+    setCurrentSection(section);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Navigation currentSection={currentSection} onNavigationClick={handleNavigationClick} />
+      {currentSection === 'About Me' && <AboutMe currentSection={currentSection} />}
+      {currentSection === 'Portfolio' && <Portfolio currentSection={currentSection} />}
+      {currentSection === 'Contact' && <Contact currentSection={currentSection} />}
+      {currentSection === 'Resume' && <Resume currentSection={currentSection} />}
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
