@@ -1,13 +1,6 @@
 import React from 'react';
+import Header from './Header';
 
-function Header() {
-    return (
-      <header>
-        <h1>Developer's Name</h1>
-        <Navigation />
-      </header>
-    );
-  }
   function Portfolio({ currentSection }) {
     return (
       <section className={currentSection === 'Portfolio' ? 'selected' : ''}>

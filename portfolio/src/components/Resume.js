@@ -1,13 +1,6 @@
 import React from 'react';
+import Header from './Header';
 
-function Header() {
-    return (
-      <header>
-        <h1>Developer's Name</h1>
-        <Navigation />
-      </header>
-    );
-  }
 function Resume({ currentSection }) {
     const proficiencies = ['Proficiency 1', 'Proficiency 2', 'Proficiency 3'];
   
